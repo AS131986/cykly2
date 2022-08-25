@@ -5,11 +5,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StatsServiceTest {
+    int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
     @Test
     void shouldCalcSumAllSales() {
         StatsService service = new StatsService();
-        int[] allSales = service.sales;
+        int[] allSales = sales;
         int expected = 180;
 
         int actual = service.sumAllSales(allSales);
@@ -20,7 +21,7 @@ class StatsServiceTest {
     @Test
     void shouldCalcAverageSales() {
         StatsService service = new StatsService();
-        int[] allSales = service.sales;
+        int[] allSales = sales;
         int expected = 15;
         int actual = service.averageSales(allSales);
 
@@ -30,7 +31,7 @@ class StatsServiceTest {
     @Test
     void shouldCalcMaxSales() {
         StatsService service = new StatsService();
-        int[] allSales = service.sales;
+        int[] allSales = sales;
         int expected = 5;
         int actual = service.maxSalesMonth(allSales);
         assertEquals(expected, actual);
@@ -39,7 +40,7 @@ class StatsServiceTest {
     @Test
     void shouldCalcLessAverage() {
         StatsService service = new StatsService();
-        int[] allSales = service.sales;
+        int[] allSales = sales;
         int expected = 5;
         int actual = service.maxSalesMonth(allSales);
         assertEquals(expected, actual);
@@ -48,7 +49,7 @@ class StatsServiceTest {
     @Test
     void shouldCalcMoreAverage() {
         StatsService service = new StatsService();
-        int[] allSales = service.sales;
+        int[] allSales = sales;
         int expected = 5;
         int actual = service.maxSalesMonth(allSales);
         assertEquals(expected, actual);
@@ -57,7 +58,7 @@ class StatsServiceTest {
     @Test
     void shouldCalcMinSales() {
         StatsService service = new StatsService();
-        int[] allSales = service.sales;
+        int[] allSales = sales;
         int expected = 8;
         int actual = service.minSalesMonth(allSales);
         assertEquals(expected, actual);
